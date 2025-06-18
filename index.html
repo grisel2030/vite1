@@ -7,7 +7,19 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="relative h-screen">
+        <!--Imagen de fondo-->
+      <div id="app"></div>
+      <div class="absolute inset-0 flex flex-col items-center ">
+        <!--Titulo Principal--> 
+        <h1 class="absolute top-10 left-0 right-0 text-center text-white text-[40px] font-bold">Reloj Digital</h1>
+        <!--Elemento Adicional-->
+        <h2 class="text-white text-[30px] font-bold">Fecha</h2>
+      </div>
+      
+      
+      
+    </div>   
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
