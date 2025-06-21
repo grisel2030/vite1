@@ -1,8 +1,49 @@
-import './style.css'
 
+import './style.css';
+
+// 1. Lista de fondos disponibles
+const fondos = [
+  public/img/fondo1.avif
+
+
+
+
+//2. Funcion para cambiar el fondo
+function cambiarFondo() {                                                        
+ indiceActual = (indiceActual + 1) % fondos.length;
+  document.getElementById('fondito').style.backgroundImage = `url('${fondos[indiceActual]}')`;
+}
+
+
+
+  
+// 3. Renderizado Inicial
 
 document.querySelector('#app').innerHTML = `
-  <div class=" relative bg-[url(./img/fondo2.avif)] h-screen bg-cover bg-no-repeat bg-center">
+  <div class="relative h-screen bg-cover bg-no-repeat bg-center transition-all duration-300" 
+       id="fondito"
+       style="background-image: url('${fondos[0]}')">
+       
+
+    <button 
+    class="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      id="boton-fondo">
+      Cambiar Fondo
+    </button>
+  
+    
+  </div>
+ `;
+
+ // 4. Asignar el evento despues de renderizar
+ document.getElementById('boton-fondo').add
+
+
+
+
+
+/* document.querySelector('#app').innerHTML = `
+  <div class="relative bg-[url(./img/fondo2.avif)] h-screen bg-cover bg-no-repeat bg-center">
 
     <!-- Elemento Principal-->
     <h1 class="absolute top-10 left-0 right-0 text-center text-white px-4 text-[40px] font-bold tracking-wider">Reloj Digital</h1>
@@ -27,8 +68,8 @@ document.querySelector('#app').innerHTML = `
   
     
   </div>
- `;//<--cierra el innerHTML aqui-->//
- // 2. Luego, fuera del HTML, añadir el codigo
+ `; */
+ 
  function actualizarFecha() {
   const fechaElemento = document.getElementById('fecha');
   if (fechaElemento) {
