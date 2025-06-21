@@ -1,18 +1,6 @@
 
 import './style.css';
 
-// 1. Lista de fondos disponibles
-const fondos = [
-  public/img/fondo1.avif
-
-
-
-
-//2. Funcion para cambiar el fondo
-function cambiarFondo() {                                                        
- indiceActual = (indiceActual + 1) % fondos.length;
-  document.getElementById('fondito').style.backgroundImage = `url('${fondos[indiceActual]}')`;
-}
 
 
 
@@ -20,14 +8,12 @@ function cambiarFondo() {
 // 3. Renderizado Inicial
 
 document.querySelector('#app').innerHTML = `
-  <div class="relative h-screen bg-cover bg-no-repeat bg-center transition-all duration-300" 
+  <div class="relative w-full h-screen bg-cover bg-no-repeat bg-center transition-all duration-300" 
        id="fondito"
-       style="background-image: url('${fondos[0]}')">
+       style="background-image: url('./img/fondo1.avif')">
        
 
-    <button 
-    class="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      id="boton-fondo">
+    <button class="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="boton-fondo" onclick="${cambiarFondo('fondo2.avif')}">
       Cambiar Fondo
     </button>
   
@@ -36,7 +22,10 @@ document.querySelector('#app').innerHTML = `
  `;
 
  // 4. Asignar el evento despues de renderizar
- document.getElementById('boton-fondo').add
+function cambiarFondo(img){
+  const fondo = document.querySelector('#app')
+  fondo.style.backgroundColor
+}
 
 
 
