@@ -1,31 +1,81 @@
 
 import './style.css';
 
-
+// 1. Importar el archivo de estilos
+const fondos = [
+  './img/fondo1.avif',
+  './img/fondo2.avif',
+  './img/fondo3.avif',
+  './img/fondo4.avif',
+  './img/fondo5.avif',
+  './img/fondo6.avif',
+  './img/fondo7.avif',
+  './img/fondo8.avif',
+];
+let indiceFondo = 0; 
 
 
   
 // 3. Renderizado Inicial
 
 document.querySelector('#app').innerHTML = `
-  <div class="relative w-full h-screen bg-cover bg-no-repeat bg-center transition-all duration-300" 
+  <div class="relative w-full h-screen bg-cover bg-no-repeat bg-center transition-all duration-300 transition: background-image 0.5s ease-in-out" 
        id="fondito"
-       style="background-image: url('./img/fondo1.avif')">
+       style="background-image: url('./img/fondo3.avif')">
+
+    <div id="botones" class="fixed bottom-10 left-0 right-0 flex justify-center gap-1">
+      <button class="text-white font-bold py-4 px-4 rounded " id="boton-fondo">
+        <img src="./img/fondo1.avif" 
+        alt="Cambiar fondo 1"
+         class="w-16 h-9 object-cover rounded border border-white transition-all duration-300 hover:scale-110">
+      </button>
+
+      <button class="text-white font-bold py-4 px-4 rounded " id="boton-fondo">
+        <img src="./img/fondo2.avif" 
+        alt="Cambiar fondo 2" 
+        class="w-16 h-9 object cover rounded border border-white transition-all duration-300 hover:scale-110">
+      </button>
+
+      <button class="text-white font-bold py-4 px-4 rounded " id="boton-fondo">
+        <img src="./img/fondo3.avif"
+        alt="Cambiar fondo 3"
+        class="w-16 h-9 object-cover rounded border border-white transition-all duration-300 hover:scale-110">
+      </button>
+
+      <button class="text-white font-bold py-4 px-4 rounded " id="boton-fondo">
+        <img src="./img/fondo4.avif"
+        alt="Cambiar fondo 4"
+        class="w-16 h-9 object-cover rounded border border-white transition-all duration-300 hover:scale-110">
+      </button>
+
+
+
+    </div>
        
 
-    <button class="absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="boton-fondo" onclick="${cambiarFondo('fondo2.avif')}">
-      Cambiar Fondo
-    </button>
+    
   
     
   </div>
  `;
 
  // 4. Asignar el evento despues de renderizar
-function cambiarFondo(img){
-  const fondo = document.querySelector('#app')
-  fondo.style.backgroundColor
+
+document.querySelector('#boton-fondo').addEventListener('click', cambiarFondo)
+
+// 5. Función para cambiar el fondo
+   function cambiarFondo() {
+    const fondo = document.getElementById('fondito');
+    indiceFondo = (indiceFondo + 1) % fondos.length; // Incrementa el índice y lo reinicia si llega al final
+    fondos.style.backgroundImage = `url(${fondos[indiceFondo]})`; // Cambia el fondo del div
+
 }
+
+
+
+
+
+
 
 
 
