@@ -7,6 +7,7 @@ import botones from './botones.js';
 
 document.querySelector('#app').innerHTML = `
   <div class="relative w-full h-screen bg-cover bg-no-repeat bg-center transition-all duration-300 transition: background-image 0.5s ease-in-out" 
+  <div class="relative w-full h-screen bg-cover bg-no-repeat bg-center transition-all duration-300 transition: background-image 0.5s ease-in-out" 
        id="fondito"
        style="background-image: url('./img/fondo2.avif')">
 
